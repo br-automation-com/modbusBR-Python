@@ -1,12 +1,17 @@
 # MasterBRBC Class Documentation
 
-The `MasterBRBC` class provides an interface for interacting with a Modbus TCP server. It includes methods for connecting to the server, reading and writing data, and managing the bus controller.
+The `MasterBRBC` class provides an interface for interacting with the B&R X20BC0087 bis controller. It includes methods for connecting to the server, reading and writing data, and managing the bus controller. The code includes a sample usage of the class, demonstrating how to create an instance, connect to the server, and perform read/write operations. 
+
+## Revision History
+
+### Version 1.0
+- Initial version.
 
 ## Attributes
 
 - **`Connected`** (`bool`): Indicates whether the client is connected to the Modbus server.
 - **`BCinfo`**: An instance of `MasterBRBCinfo` containing bus controller information.
-- **`MDinfo`** (`list`): A list of `MasterBRMDinfo` objects representing connected modules.
+- **`MDinfo`** (`list`): A list of `MasterBRMDinfo` objects representing connected X20 hardware modules.
 
 ## Constants
 
@@ -112,7 +117,7 @@ Writes analog outputs to a specified module.
 
 # MasterBRMDinfo Class Documentation
 
-The `MasterBRMDinfo` class provides information about a specific module connected to the Modbus TCP server. It includes properties for accessing module details such as hardware ID, name, and configuration.
+The `MasterBRMDinfo` class provides information about a specific X20 hardware module connected to the bus controller. It includes properties for accessing module details such as hardware ID, name, and configuration.
 
 ## Attributes
 
@@ -304,8 +309,6 @@ The `MasterBRBCinfo` class provides an interface for accessing and managing bus 
 
 ### Modbus Properties
 
-- **`modbus_refresh`** (`float`): The Modbus refresh interval.
-  - **Setter**: Allows updating the refresh interval.
 - **`modbus_clients`** (`int`): The number of Modbus clients.
 - **`modbus_global_tel_cnt`** (`list`): The global telegram count.
 - **`modbus_local_tel_cnt`** (`list`): The local telegram count.
